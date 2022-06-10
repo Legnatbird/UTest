@@ -35,6 +35,15 @@ public class FillTheForm3 implements Task {
                 Click.on(RegisterPage3.Language),
                 WaitUntil.the(RegisterPage3.LanguageInput,isVisible()),
                 Enter.theValue(datatable.get(0).get("language")).into(RegisterPage3.LanguageInput).thenHit(Keys.ENTER),
+                Click.on(RegisterPage3.Mobile),
+                WaitUntil.the(RegisterPage3.MobileInput,isVisible()),
+                Enter.theValue(datatable.get(0).get("mobile")).into(RegisterPage3.MobileInput).thenHit(Keys.ENTER),
+                Click.on(RegisterPage3.Model),
+                WaitUntil.the(RegisterPage3.ModelInput,isVisible()),
+                Enter.theValue(datatable.get(0).get("model")).into(RegisterPage3.ModelInput).thenHit(Keys.ENTER),
+                Click.on(RegisterPage3.Os),
+                WaitUntil.the(RegisterPage3.OsInput,isVisible()),
+                Enter.theValue(datatable.get(0).get("os")).into(RegisterPage3.OsInput).thenHit(Keys.ENTER),
                 Click.on(RegisterPage3.NextStep)
         );
     }
