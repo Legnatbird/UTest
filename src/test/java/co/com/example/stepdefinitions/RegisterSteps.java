@@ -2,6 +2,8 @@ package co.com.example.stepdefinitions;
 
 import co.com.example.tasks.FillTheForm1;
 import co.com.example.tasks.FillTheForm2;
+import co.com.example.tasks.FillTheForm3;
+import co.com.example.tasks.FillTheForm4;
 import co.com.example.userinterfaces.HomePage;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
