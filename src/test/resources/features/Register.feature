@@ -11,8 +11,8 @@ Feature: Register on the web
       | city    | zip   | country  |
       | Palmira | 12345 | Colombia |
     When I fill the 3rd form with valid data
-      | computer | version   |
-      | Mac      | OS X 10.3 |
+      | computer | version   | language |
+      | macOS    | OS X 10.3 | Spanish  |
     When I fill the last form with valid data
       | password     |
       | Osopanda14$% |

@@ -1,12 +1,10 @@
 package co.com.example.tasks;
 
-import co.com.example.userinterfaces.RegisterPage1;
 import co.com.example.userinterfaces.RegisterPage2;
 import cucumber.api.DataTable;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.*;
-import net.serenitybdd.screenplay.waits.Wait;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
@@ -29,6 +27,7 @@ public class FillTheForm2 implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue(datatable.get(0).get("city")).into(RegisterPage2.City),
+                WaitUntil.the(RegisterPage2.CityList, isVisible()),
                 Hit.the(Keys.ARROW_DOWN).keyIn(RegisterPage2.City),
                 Hit.the(Keys.ENTER).keyIn(RegisterPage2.City),
                 Enter.theValue(datatable.get(0).get("zip")).into(RegisterPage2.Zip).thenHit(Keys.TAB).thenHit(Keys.ENTER),

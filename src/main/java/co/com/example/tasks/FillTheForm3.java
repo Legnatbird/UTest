@@ -1,19 +1,18 @@
 package co.com.example.tasks;
 
-import co.com.example.userinterfaces.RegisterPage1;
+import co.com.example.userinterfaces.RegisterPage3;
 import cucumber.api.DataTable;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
 import java.util.List;
 import java.util.Map;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class FillTheForm3 implements Task {
 
@@ -27,16 +26,16 @@ public class FillTheForm3 implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(datatable.get(0).get("name")).into(RegisterPage1.FirstName),
-                Enter.theValue(datatable.get(0).get("lastname")).into(RegisterPage1.LastName),
-                Enter.theValue(datatable.get(0).get("email")).into(RegisterPage1.Email),
-                SelectFromOptions.byVisibleText(datatable.get(0).get("month")).from(RegisterPage1.MonthButton),
-                SelectFromOptions.byVisibleText(datatable.get(0).get("day")).from(RegisterPage1.Day),
-                SelectFromOptions.byVisibleText(datatable.get(0).get("year")).from(RegisterPage1.Year),
-                Click.on(RegisterPage1.Input),
-                Enter.theValue(datatable.get(0).get("language")).into(RegisterPage1.Input).thenHit(Keys.ENTER),
-                Scroll.to(RegisterPage1.NextStep).andAlignToTop(),
-                Click.on(RegisterPage1.NextStep)
+                Click.on(RegisterPage3.Computer),
+                WaitUntil.the(RegisterPage3.ComputerInput, isVisible()),
+                Enter.theValue(datatable.get(0).get("computer")).into(RegisterPage3.ComputerInput).thenHit(Keys.ENTER),
+                Click.on(RegisterPage3.Version),
+                WaitUntil.the(RegisterPage3.VersionInput,isVisible()),
+                Enter.theValue(datatable.get(0).get("version")).into(RegisterPage3.VersionInput).thenHit(Keys.ENTER),
+                Click.on(RegisterPage3.Language),
+                WaitUntil.the(RegisterPage3.LanguageInput,isVisible()),
+                Enter.theValue(datatable.get(0).get("language")).into(RegisterPage3.LanguageInput).thenHit(Keys.ENTER),
+                Click.on(RegisterPage3.NextStep)
         );
     }
     public static FillTheForm3 info(DataTable datatable){
