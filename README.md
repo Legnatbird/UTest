@@ -12,7 +12,7 @@
 ### Given
 > I go to the registration page
 ### When
-> I fill in the form with valid information
+> I fill the form with valid information
 ### Then
 > I should be registered and can access to the page
 
