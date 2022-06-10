@@ -21,3 +21,5 @@ Doing this test code make me feel like I'm a real developer, because I really ne
 
 # Decisions in the code
 When I see the quantity of parameters and how the registration proccess works I really thinks is more **legible** and **easy to understand** divide the registration proccess in _4 steps_, because in this way I can divide the parameters in 4 groups, and every test step is more clear and easy to understand _this helps me to know when the code failed_., and do the _Tasks_ more clean. So now imagine if I do every test in one line, this is so **BAD** because when you need to pass the arguments in one line for the registration task, the parameters you need to read is like datatable.get(0), datatable.get(1), so expensive to do, so for that i realized the transformation in asMaps and simple to the element that i need by the _Key_
+
+<center><img src="https://i.ibb.co/r6sPh75/finish.png"></center>
