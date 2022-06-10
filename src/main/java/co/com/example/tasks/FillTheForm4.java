@@ -1,19 +1,20 @@
 package co.com.example.tasks;
 
-import co.com.example.userinterfaces.RegisterPage1;
+import co.com.example.userinterfaces.RegisterPage4;
 import cucumber.api.DataTable;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import org.openqa.selenium.Keys;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+
 
 import java.util.List;
 import java.util.Map;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class FillTheForm4 implements Task {
 
@@ -27,16 +28,12 @@ public class FillTheForm4 implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(datatable.get(0).get("name")).into(RegisterPage1.FirstName),
-                Enter.theValue(datatable.get(0).get("lastname")).into(RegisterPage1.LastName),
-                Enter.theValue(datatable.get(0).get("email")).into(RegisterPage1.Email),
-                SelectFromOptions.byVisibleText(datatable.get(0).get("month")).from(RegisterPage1.MonthButton),
-                SelectFromOptions.byVisibleText(datatable.get(0).get("day")).from(RegisterPage1.Day),
-                SelectFromOptions.byVisibleText(datatable.get(0).get("year")).from(RegisterPage1.Year),
-                Click.on(RegisterPage1.Input),
-                Enter.theValue(datatable.get(0).get("language")).into(RegisterPage1.Input).thenHit(Keys.ENTER),
-                Scroll.to(RegisterPage1.NextStep).andAlignToTop(),
-                Click.on(RegisterPage1.NextStep)
+            Enter.theValue(datatable.get(0).get("password")).into(RegisterPage4.Password),
+            Enter.theValue(datatable.get(0).get("password")).into(RegisterPage4.ConfirmPassword),
+            Scroll.to(RegisterPage4.FullyRegisterButton).andAlignToTop(),
+            Click.on(RegisterPage4.CheckMark1),
+            Click.on(RegisterPage4.CheckMark2),
+            Click.on(RegisterPage4.FullyRegisterButton)
         );
     }
     public static FillTheForm4 info(DataTable datatable){
