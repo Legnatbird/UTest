@@ -5,8 +5,8 @@ Feature: Register on the web
     Given I want to register on the page
     Then I go to register page
     When I fill the 1st form with valid data
-      | name     | lastname | email              | month   | day | year | language |
-      | Isabella | Bedoya   | protestomg@omgew.com | January | 12  | 2001 | Spanish  |
+      | name     | lastname | email                   | month   | day | year | language |
+      | Isabella | Bedoya   | protestasqomg@omdsadgew.com | January | 12  | 2001 | Spanish  |
     When I fill the 2nd form with valid data
       | city    | zip   | country  |
       | Palmira | 12345 | Colombia |

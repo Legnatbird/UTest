@@ -1,5 +1,8 @@
 # Utest
 **Windows:** ChromeDriver = 102.0.5005.61;
+##How to run
+**Use:**mvn -Dtest=registerRunner test 
+
 ## User History
 ------------
 ### As a
