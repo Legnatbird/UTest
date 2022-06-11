@@ -1,5 +1,6 @@
 # Utest
 **Windows:** ChromeDriver = 102.0.5005.61
+**JavaJDK:** 1.8.0_202 
 ## How to run
 **Use:** mvn -Dtest=registerRunner test 
 
